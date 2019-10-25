@@ -8,7 +8,7 @@ include("connect.php");
 										$duedate = date('Y-m-d h:i:s', strtotime($date. ' + 14 days'));
 										$sql ="Update cmrtbl SET STATUS='Approved', approvedate='$date',duedate='$duedate' where cmrid='$cmrid'";
 										if($conn->query($sql) === TRUE){
-											$send_notification=mail("wallaceafam@gmail.com", "CMR Comment Notice", "CMR has been sent to you for comment. <br/>Thanks", "eeavong@gmail.com");
+											$send_notification=mail("email@gmail.com", "CMR Comment Notice", "CMR has been sent to you for comment. <br/>Thanks", "your@gmail.com");
 												if($send_notification){
 													echo "<p class='text-success'>Email sent successfully</p>";
 												}else{
